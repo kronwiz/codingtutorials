@@ -14,9 +14,9 @@ Potete trovare altre informazioni nella [Wiki](../../wiki) come, per esempio, i 
 
 I testi dei tutorial sono distribuiti con licenza
 
-![Licenza Creative Commons](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png) 
+![Licenza Creative Commons](https://i.creativecommons.org/l/by-sa/4.0/88x31.png) 
 
-[Creative Commons Attribuzione - Non commerciale - Condividi allo stesso modo 4.0 Internazionale](http://creativecommons.org/licenses/by-nc-sa/4.0/deed.it) 
+[Creative Commons Attribuzione - Condividi allo stesso modo 4.0 Internazionale.](http://creativecommons.org/licenses/by-sa/4.0/deed.it) 
 
 ### Software
 
@@ -45,9 +45,9 @@ You can find more information in the [Wiki](../../wiki) such as, for example, li
 
 The tutorial texts are under the license
 
-![Licenza Creative Commons](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png) 
+![Licenza Creative Commons](https://i.creativecommons.org/l/by-sa/4.0/88x31.png) 
 
-[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/) 
+[Creative Commons Attribution-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-sa/4.0/) 
 
 ### Software
 
