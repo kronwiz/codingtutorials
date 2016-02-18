@@ -21,3 +21,6 @@ Tutorial graphics have been adapted from:
 
 
 ###############################################################################
+
+Downloaded from: http://opengameart.org/content/shooting-gallery
+
