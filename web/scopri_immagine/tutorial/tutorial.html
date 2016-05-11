@@ -1,0 +1,849 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Scopri l'immagine - Tutorial</title>
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+<!-- slide00 -->
+<section>
+<section>
+<h1>Scopri l'immagine</h1>
+<h3>Un gioco in Javascript</h3>
+
+</section>
+<section>
+
+<p>Di che tipo di gioco si tratta?</p>
+<p>C'&egrave; un'immagine nascosta da una serie di "piastrelle": ogni piastrella
+scompare se ci si clicca sopra rivelando parte dell'immagine. Quando l'immagine
+&egrave; completamente scoperta si attiva il pulsante "Successiva" per passare
+all'immagine successiva.</p>
+
+</section>
+<section>
+
+<img src="immagini/gioco.png"/>
+</section>
+</section>
+
+<!-- slide01 -->
+<section>
+<section>
+<h2>S&igrave;, ma... cos'&egrave; "Javascript"?</h2>
+
+</section>
+<section>
+
+<p>Javascript &egrave; l'unico linguaggio di programmazione che i browser capiscono e
+viene utilizzato per far fare qualcosa alle pagine web.</p>
+<p>Quindi le componenti che si usano per creare un sito sono:
+<ul>
+	<li>HTML: per definire la struttura del sito e i suoi contenuti;</li>
+	<li>CSS: per dare uno stile al sito (colori, caratteri, ecc.);</li>
+	<li>Javascript: per far eseguire delle azioni quando cliccate su un pulsante,
+ecc.</li>
+</ul>
+
+</section>
+<section>
+
+<p>In questo tutorial le useremo tutte e tre:
+<ul>
+	<li>HTML: per mostrare la pagina con l'immagine e definire dove devono
+comparire le "piastrelle" che nascondono l'immagine;</li>
+	<li>CSS: per dare un po' di colore alla pagina, ma per questo molto
+viene lasciato alla vostra fantasia;</li>
+	<li>Javascript: per scoprire parte dell'immagine quando si clicca su una
+"piastrella".</li>
+
+</section>
+<section>
+
+<h2>Iniziamo...</h2>
+</section>
+</section>
+
+<!-- slide02 -->
+<section>
+<section>
+<h2>HTML</h2>
+<p>Creiamo la pagina con l'immagine e la griglia delle piastrelle</p>
+
+</section>
+<section>
+
+<p>La pagina &egrave; composta da tre righe:
+<ul>
+	<li>titolo</li>
+	<li>immagine</li>
+	<li>pulsante "Successiva"</li>
+</ul>
+</p>
+<p>Per comporla utilizziamo gli strumenti che ci mette a disposizione Bootstrap,
+ma non &egrave; obbligatorio. Li utilizziamo perch&eacute; potrebbero tornarci comodi se
+vorremo abbellire il gioco in seguito.</p>
+
+</section>
+<section>
+
+<p>Qui trovi la pagina vuota HTML standard con l'intestazione per
+Bootstrap e il container pronto all'uso.</p>
+
+<pre><code data-trim>
+&lt;html&gt;
+        &lt;head&gt;
+                &lt;meta charset="utf-8"&gt;
+                &lt;title&gt;Scopri l'immagine&lt;/title&gt;
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+                &lt;link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css"&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+                &lt;div class="container"&gt;
+
+                &lt;/div&gt;
+                &lt;!-- fine container --&gt;
+
+                &lt;script src="./bootstrap/js/jquery-1.12.1.min.js"&gt;&lt;/script&gt;
+                &lt;script src="./bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+        &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+Crea un file "scopri_immagine.html" e copia l'HTML qui sopra.
+
+</section>
+<section>
+
+<p>Nel container devi inserire una prima riga con il titolo del gioco. Ti ricordi
+come si fa ad aggiungere una riga con Bootstrap?</p>
+<p>Una riga &egrave; un <code>&lt;div&gt;</code> con <code>class="row"</code>, cos&igrave;:</p>
+
+<pre><code data-trim>
+&lt;div class="row"&gt;
+&lt;/div&gt;
+</code></pre>
+
+</section>
+<section>
+
+<p>All'interno devi mettere il <code>&lt;div&gt;</code> che definisce le colonne:
+per questo gioco mettiamo sempre un'unica colonna larga tutto lo schermo, cio&egrave;
+che occupa tutte le 12 colonne di Bootstrap:</p>
+
+<pre><code data-trim>
+&lt;div class="col-md-12"&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Infine, dentro la nostra colonna puoi scrivere il titolo del gioco.</p>
+
+</section>
+<section>
+
+<p>Come seconda riga dobbiamo inserire la griglia che conterr&agrave; l'immagine e le 16
+piastrelle che la nascondono. Per fare una griglia in HTML si usa una tabella:
+l'elemento <code>&lt;table&gt;</code> serve per creare tabelle rettangolari che
+assomigliano ai fogli di calcolo in Excel (oppure OpenOffice, ecc.).</p>
+<p>Una riga della tabella si inserisce con l'elemento
+<code>&lt;tr&gt;</code>.</p>
+<p>Una cella della tabella si inserisce con l'elemento <code>&lt;td&gt;</code>.
+
+</section>
+<section>
+
+<p>Esempio di tabella con tre righe e due celle per riga:</p>
+
+<pre><code data-trim>
+&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Riga 1 Cella 1&lt;/td&gt;
+		&lt;td&gt;Riga 1 Cella 2&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Riga 2 Cella 1&lt;/td&gt;
+		&lt;td&gt;Riga 2 Cella 2&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+
+<p>Le celle della terza riga, per esempio, sono vuote.</p>
+<p>Abbiamo scritto gli elementi <code>&lt;td&gt;</code> uno sotto l'altro per
+comodit&agrave;, ma il browser li visualizzer&agrave; sulla stessa riga.</p>
+
+</section>
+<section>
+
+<p>Tu devi inserire una tabella di 16 righe e 16 colonne con tutte le celle
+vuote, quindi rimboccati le maniche e procedi! In realt&agrave; dopo aver scritto la
+prima riga puoi usare il copia &amp; incolla per le successive.</p>
+<p>Ricordati di creare una riga e la singola colonna per Bootstrap come abbiamo
+fatto prima per il titolo perch&eacute; altrimenti la tabella non sar&agrave; impaginata
+correttamente.</p>
+
+</section>
+<section>
+
+<p>Fatto?</p>
+<p>Cosa vedi nel browser?</p>
+<p>Niente?</p>
+<p>Perfetto! La tabella c'&egrave; ma non ha bordi ed &egrave; completamente vuota, quindi &egrave;
+invisibile.</p>
+<p>In realt&agrave; per completarla ci mancano due cose: il CSS per impostare la
+dimensione e il Javascript per riempirla, ma vedremo
+tutto nelle prossime sezioni.</p>
+
+</section>
+<section>
+
+<p>Abbiamo quasi finito: la terza riga contiene solo il pulsante "Successiva"
+che servir&agrave; per spostarsi all'immagine successiva.</p>
+<p>Quindi crea la solita coppia riga + colonna di Bootstrap e all'interno
+aggiungi il pulsante:</p>
+
+<pre><code data-trim>
+&lt;button id="successiva" class="btn btn-primary" disabled&gt;Successiva&lt;/button&gt;
+</code></pre>
+
+<p>Nota bene: il pulsante ha un identificativo (una specie di nome) contenuto
+nell'attributo "id" e compare gi&agrave; disabilitato (ha l'attributo "disabled") in
+modo che non sia cliccabile.</p>
+</section>
+</section>
+
+<!-- slide03 -->
+<section>
+<section>
+<h2>CSS</h2>
+<p>Aggiungiamo un po' di stile</p>
+
+</section>
+<section>
+
+<p>Crea un file "scopri_immagine.css" e nel file "scopri_immagine.html" crea un
+link per collegarlo.</p>
+<p>Suggerimento se non ti ricordi la sintassi: copia il
+<code>&lt;link&gt;</code> che compare nella <code>&lt;head&gt;</code> e che
+punta verso il CSS di Bootstrap e poi cambia il nome file dentro l'attributo
+<code>href</code>.</p>
+
+</section>
+<section>
+
+<p>Le uniche propriet&agrave; che dobbiamo impostare sono quelle della tabella, quindi
+nel file CSS che hai appena creato aggiungi un selettore
+<code>table</code> e inserisci le seguenti linee:</p>
+
+<pre><code data-trim>
+width: 600px;
+height: 337px;
+border-spacing: 2px;
+border-collapse: separate;
+</code></pre>
+
+<p>Le propriet&agrave; "width" e "height" impostano la larghezza e l'altezza della
+tabella, mentre le propriet&agrave; "border" servono per spaziare un po' le celle tra
+di loro in modo che si veda la separazione tra le piastrelle.</p>
+</section>
+</section>
+
+<!-- slide04 -->
+<section>
+<section>
+<h2>Javascript</h2>
+<p>Animiamo il nostro gioco</p>
+
+</section>
+<section>
+
+<p>Per chi &egrave; abituato a Scratch, Javascript &egrave; un "vero" linguaggio di
+programmazione, quindi la prima cosa che si nota &egrave; che &egrave; necessario scrivere
+tutte le istruzioni a mano: non esistono blocchi da spostare con le istruzioni
+gi&agrave; pronte e qualche casella da riempire.</p>
+<p>Tuttavia ci sono molte somiglianze e nel seguito verranno evidenziate
+mettendo a confronto il codice Javascript con l'analogo Scratch (dove
+possibile).</p>
+
+</section>
+<section>
+
+<p>Crea un file "scopri_immagine.js" in cui andrai a scrivere il codice Javascript
+e collegalo nel file "scopri_immagine.html". Per collegarlo devi creare un
+elemento <code>&lt;script&gt;</code> in fondo al <code>&lt;body&gt;</code>, dopo
+gli elementi <code>&lt;script&gt;</code> di Bootstrap:</p>
+
+<pre><code data-trim>
+&lt;script src="./scopri_immagine.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>In questo modo dici al browser di caricare il programma Javascript che hai
+scritto in quel file.</p>
+</section>
+</section>
+
+<!-- slide05 -->
+<section>
+<section>
+<h2>Inizio del programma</h2>
+<p>La prima cosa che il nostro programma deve fare &egrave; caricare la prima immagine
+e visualizzare le 16 piastrelle sopra l'immagine per nasconderla.</p>
+
+</section>
+<section>
+
+<p>Nel file "scopri_immagine.js" scrivi una funzione fatta cos&igrave;:</p>
+
+<pre><code data-trim>
+function inizializza () {
+  numero_immagine = 0;
+  imposta_immagine ( numero_immagine );
+  metti_piastrelle ();
+}
+</code></pre>
+
+<p>Una "funzione" &egrave; un blocco di istruzioni che possono essere chiamate tutte
+assieme. La nostra funzione:</p>
+<ul>
+	<li>imposta la variabile "numero_immagine" a 0;
+	<li>chiama l'altra funzione "imposta_immagine" passandogli il valore di
+"numero_immagine";
+	<li>chiama l'altra funzione "metti_piastrelle".
+</ul>
+
+</section>
+<section>
+
+<p>In Scratch avrebbe questo aspetto:</p>
+<p><img src="immagini/02_inizializza.png"/></p>
+
+<p>La parte in blu &egrave; un commento: il browser non lo vede e serve solo per
+spiegare cosa fa la funzione.</p>
+
+</section>
+<section>
+
+<p>Differenze:</p>
+<ul>
+	<li>"function" in Scratch si chiama "definisci";
+	<li>il nome di una fuzione &egrave; sempre seguito dalle parentesi tonde, sia quando
+viene definita, sia quando viene chiamata;
+	<li>al posto di "porta" si usa "=" per impostare il valore di una variabile;
+	<li>ogni istruzione in Javascript deve essere terminata da un ";" perch&eacute;, come
+in HTML, gli a-capo non contano.
+</ul>
+
+</section>
+<section>
+
+<p>A questo punto, per&ograve;, ci mancano molti pezzi per far funzionare la nostra
+funzione (scusate il gioco di parole).</p>
+<p>Prova a indovinare cosa prima di passare alla slide successiva.</p>
+
+</section>
+<section>
+
+<p>Vediamo se hai indovinato:</p>
+
+<ul>
+	<li>la variabile "numero_immagine" non &egrave; stata definita;
+	<li>la funzione "imposta_immagine" non &egrave; stata definita: cosa fa?
+	<li>la funzione "metti_piastrelle" non &egrave; stata definita: cosa fa?
+	<li>dove viene chiamata la nostra funzione "inizializza"? Se non la chiama
+nessuno lei sta l&igrave; e non fa niente.
+</ul>
+
+<p>Ricordati che a un computer dobbiamo dire tutto.</p>
+
+</section>
+<section>
+
+<p>Definiamo prima di tutto le variabili che ci serviranno nel programma.
+Scrivile in cima al file, sopra la funzione "inizializza".</p>
+
+<pre><code data-trim>
+// numero di piastrelle visibili
+var piastrelle = 16;
+// numero dell'immagine visualizzata
+var numero_immagine = 0;
+</code></pre>
+
+<p>Le righe che iniziano con "//" sono dei commenti, puoi evitare di scriverle
+se vuoi.</p>
+
+</section>
+<section>
+
+<p>In Scratch avrebbe questo aspetto:</p>
+<p><img src="immagini/01_inizio_programma.png"/></p>
+
+<p>In Javascript quando si definisce una variabile per la prima volta occorre
+usare la parola chiave "var".</p>
+</section>
+</section>
+
+<!-- slide06 -->
+<section>
+<section>
+<h2>Imposta immagine</h2>
+<p>Questa &egrave; la funzione che cambia l'immagine di sfondo della tabella</p>
+
+</section>
+<section>
+
+<p>La funzione da aggiungere al nostro file &egrave; la seguente:</p>
+
+<pre><code data-trim>
+function imposta_immagine ( num ) {
+  var imm = document.getElementById ( "immagine" );
+  if ( num == 0 )
+    imm.style.backgroundImage = "url( 'immagini/img1.jpg' )";
+  else if ( num == 1 )
+    imm.style.backgroundImage = "url( 'immagini/img2.jpg' )";
+  else if ( num == 2 )
+    imm.style.backgroundImage = "url( 'immagini/img3.jpg' )";
+}
+</code></pre>
+
+</section>
+<section>
+
+<p>Diamo subito un'occhiata a come apparirebbe in Scratch:</p>
+<p><img src="immagini/04_imposta_immagine.png"/></p>
+
+</section>
+<section>
+
+<p>Come vedi si assomigliano moltissimo, con le dovute differenze:</p>
+<ul>
+	<li>le istruzioni in Javascript sono in inglese: "se" diventa "if",
+"altrimenti" diventa "else", "altrimenti... se" si pu&ograve; scrivere come una sola
+istruzione "else if";
+	<li>ci vogliono le parentesi attorno alla condizione dell'"if" (quella che in
+Scratch &egrave; verde);
+	<li>il controllo se "num" &egrave; uguale a 0, per esempio, &egrave; reso in modo strano
+con due caratteri di uguale "==" (se sei curioso fatti spiegare da un mentor
+perch&eacute;).
+</ul>
+
+</section>
+<section>
+
+<p>L'unica riga completamente nuova &egrave; la prima:</p>
+
+<pre><code data-trim>
+var imm = document.getElementById ( "immagine" );
+</code></pre>
+
+<p>Se leggi bene, il nome della funzione chiamata ti d&agrave; qualche indizio:</p>
+<p><table>
+	<tr>
+		<td>document</td>
+		<td>get</td>
+		<td>Element</td>
+		<td>By</td>
+		<td>Id</td>
+		<td>"immagine"</td>
+	<tr>
+	<tr>
+		<td>dal documento</td>
+		<td>ricava</td>
+		<td>l'elemento</td>
+		<td>con</td>
+		<td>id</td>
+		<td>"immagine"</td>
+	<tr>
+</table></p>
+
+</section>
+<section>
+
+<p>Quindi stiamo chiedendo al browser di prendere l'elemento nel nostro HTML che
+ha l'attributo "id" uguale a "immagine" e di metterlo nella nuova (c'&egrave; "var"
+davanti) variabile "imm" perch&eacute; ci servir&agrave; dopo.</p>
+<p>Ma noi non abbiamo un elemento con id "immagine"! Apriamo il file HTML e
+aggiungiamo l'attributo id="immagine" all'elemento <code>&lt;table&gt;</code>.
+Il risultato &egrave; questo:
+
+<pre><code data-trim>
+&lt;table id="immagine"&gt;
+</code></pre>
+
+<p>In questo modo l'istruzione di prima trova la tabella e la "mette" nella
+variabile "imm" cos&igrave; noi possiamo modificarla cambiandone lo sfondo.</p>
+
+</section>
+<section>
+
+<p>Avendo il riferimento alla tabella, nelle istruzioni "if" possiamo cambiarne
+lo sfondo con questa istruzione:</p>
+
+<pre><code data-trim>
+imm.style.backgroundImage = "url( 'immagini/img1.jpg' )"
+</code></pre>
+
+<p><table>
+	<tr>
+		<td>imm</td>
+		<td>style</td>
+		<td>background</td>
+		<td>Image</td>
+		<td>url</td>
+	<tr>
+	<tr>
+		<td>elemento</td>
+		<td>stile</td>
+		<td>sfondo</td>
+		<td>immagine</td>
+		<td>percorso</td>
+	<tr>
+</table></p>
+
+</section>
+<section>
+
+<p>Finalmente possiamo provare quello che abbiamo scritto fino ad ora.</p>
+<p>Prima di tutto nella funzione "inizializza" devi commentare temporaneamente
+la chiamata alla funzione "metti_piastrelle" perch&eacute; non esiste ancora e il
+browser ci darebbe un errore. Per farla diventare un commento aggiunti i
+caratteri "//" a inizio riga.</p>
+
+</section>
+<section>
+
+<p>Poi dobbiamo dire al browser di chiamare la funzione "inizializza" che &egrave; il
+punto di partenza di tutto, un po' come la bandiera verde in Scratch. La
+chiamiamo dal file HTML. Apri questo file e modifica l'elemento
+<code>&lt;body&gt;</code> aggiungendo l'attributo "onload" in modo che diventi
+cos&igrave;:</p>
+
+<pre><code data-trim>
+&lt;body onload="inizializza()"&gt;
+</code></pre>
+
+<p>Se aggiorni il browser (F5) e tutto &egrave; andato al suo posto dovrebbe comparire
+la prima immagine.</p>
+<p>Che sudata!</p>
+</section>
+</section>
+
+<!-- slide07 -->
+<section>
+<section>
+<h2>Metti piastrelle</h2>
+<p>Questa funzione mostra le piastrelle nascondendo l'immagine di sfondo.</p>
+
+</section>
+<section>
+
+<p>Per mostrare le piastrelle utilizziamo lo stesso metodo usato per l'immagine
+grossa: ogni piastrella &egrave; l'immagine di sfondo di una cella della tabella.</p>
+<img src="immagini/gioco.png"/>
+
+</section>
+<section>
+
+<p>Quindi, come gi&agrave; fatto per l'immagine grossa, chiediamo al browser di
+passarci tutte le celle di tabella che trova nel documento e per ciascuna di
+queste impostiamo lo sfondo con l'immagine della piastrella:</p>
+
+<pre><code data-trim>
+function metti_piastrelle () {
+  var celle = document.getElementsByTagName ( "td" );
+  for ( var i = 0; i &lt; celle.length; i++ ) {
+    celle [ i ].style.backgroundImage = "url( 'immagini/piastrella.png' )";
+  }
+
+  piastrelle = 16;
+}
+</code></pre>
+
+</section>
+<section>
+
+<p>L'istruzione usata &egrave; leggermente diversa dalla precedente:</p>
+
+<pre><code data-trim>
+var celle = document.getElementsByTagName ( "td" );
+</code></pre>
+
+<p>Se leggi bene, il nome della funzione chiamata ti d&agrave; qualche indizio:</p>
+<p><table>
+	<tr>
+		<td>document</td>
+		<td>get</td>
+		<td>Elements</td>
+		<td>By</td>
+		<td>Tag</td>
+		<td>Name</td>
+		<td>"td"</td>
+	<tr>
+	<tr>
+		<td>dal documento</td>
+		<td>ricava</td>
+		<td>gli elementi</td>
+		<td>con</td>
+		<td>tag</td>
+		<td>nome</td>
+		<td>"td"</td>
+	<tr>
+</table></p>
+
+</section>
+<section>
+
+<p>L'istruzione "for" serve per eseguire un ciclo, un po' come l'istruzione
+"ripeti" in Scratch. Anche se non &egrave; proprio uguale proviamo a renderla cos&igrave;:</p>
+
+<img src="immagini/05_metti_piastrelle.png"/>
+
+</section>
+<section>
+
+<p>A questo punto, se togli il commento davanti a "metti_piastrelle" nella
+funzione "inizializza" e aggiorni la pagina nel browser dovresti vedere
+comparire anche le piastrelle.</p>
+</section>
+</section>
+
+<!-- slide08 -->
+<section>
+<section>
+<h2>Togli piastrella</h2>
+<p>Questa funzione nasconde una piastrella quando si clicca con il mouse su di
+essa mostrando parte dell'immagine sottostante.</p>
+
+</section>
+<section>
+
+<p>Questa funzione &egrave; un po' diversa dalle precedenti perch&eacute; non deve cercare la
+cella di tabella da modificare, ma quando il browser la chiama le passa gi&agrave; la
+cella su cui hai cliccato.</p>
+
+<pre><code data-trim>
+function togli_piastrella ( elemento ) {
+  /* controllo che la piastrella ci sia per non togliere 1 anche quando e' gia'
+  stata rimossa */
+  if ( elemento.style.backgroundImage != "" ) {
+    elemento.style.backgroundImage = "";
+    piastrelle = piastrelle - 1;
+  }
+
+  if ( piastrelle == 0 ) {
+    var successiva = document.getElementById ( "successiva" );
+    successiva.removeAttribute ( "disabled" );
+  }
+}
+</code></pre>
+
+</section>
+<section>
+
+<p>Quindi quando clicchi su una cella di tabella il browser chiama la funzione
+"togli_piastrella" e le passa nel parametro "elemento" la cella su cui hai
+cliccato. La funzione poi fa due cose semplici:</p>
+
+<ul>
+	<li>controlla se la cella ha un'immagine di sfondo
+(<code>style.backgroundImage</code>) e se ce l'ha la toglie. Cos&igrave; la piastrella
+scompare e dobbiamo ricordarci di sottrarre 1 dal numero di piastrelle
+visualizzate;
+	<li>controlla se non ci sono pi&ugrave; piastrelle visualizzate: in questo caso
+attiva il pulsante "Successiva", che fino a ora &egrave; rimasto disabilitato.
+</ul>
+
+</section>
+<section>
+
+<p>Questa potrebbe essere la rappresentazione (approssimativa) in Scratch:</p>
+<img src="immagini/03_togli_piastrella.png"/>
+
+</section>
+<section>
+
+<p>Guarda come facciamo ad attivare il pulsante "Successiva": dovresti
+riconoscere un'istruzione che hai gi&agrave; visto.</p>
+<p>Difatti utilizziamo l'istruzione <code>getElementById</code> per cercare un
+elemento con attributo "id" uguale a "successiva" come abbiamo gi&agrave; fatto in
+precedenza per cercare la tabella.</p>
+<p>Poi il pulsante viene attivato rimuovento il suo attributo "disabled". Leggi
+bene l'istruzione:</p>
+
+<table>
+	<tr>
+		<td>successiva</td>
+		<td>remove</td>
+		<td>Attribute</td>
+		<td>"disabled"</td>
+	</tr>
+	<tr>
+		<td>da successiva</td>
+		<td>rimuovi</td>
+		<td>l'attributo</td>
+		<td>"disabled"</td>
+	</tr>
+</table>
+
+</section>
+<section>
+
+<p>Ci manca un pezzo, per&ograve;: come fa il browser a sapere che deve chiamare la
+funzione "togli_piastrella" quando clicchi su una cella di tabella?</p>
+<p>Un modo &egrave; quello di aggiungere a ogni cella l'attributo "onclick" (che vuol
+dire "quando si clicca") con all'interno la chiamata alla nostra funzione.</p>
+<p>Nel file HTML una cella di tabella diventer&agrave; cos&igrave;:</p>
+
+<pre><code data-trim>
+&lt;td onclick="togli_piastrella( this )"&gt;&lt;/td&gt;
+</code></pre>
+
+<p>Questa modifica deve essere eseguita su tutti gli elementi
+<code>&lt;td&gt;</code>.</p>
+
+</section>
+<section>
+
+<p>Se hai finito, aggiorna il browser con F5 e prova a cliccare sulle piastrelle
+per vedere se scompaiono.</p>
+<p>Falle scomparire tutte e controlla se il pulsante "Successiva" si attiva.</p>
+</section>
+</section>
+
+<!-- slide09 -->
+<section>
+<section>
+<h2>Successiva</h2>
+<p>Come dice il nome questa funzione contiene le istruzioni che verranno
+eseguite quando si clicca sul pulsante "Successiva".</p>
+
+</section>
+<section>
+
+<p>Prova a immaginare cosa dovr&agrave; fare questa funzione.</p>
+<p>Ricordati che il numero dell'immagine che stiamo visualizzando &egrave; memorizzato
+nella variabile <code>numero_immagine</code> e che abbiamo al massimo 3
+immagini.</p>
+
+</section>
+<section>
+
+<p>Guarda se ti sei ricordato tutto:</p>
+
+<pre><code data-trim>
+function successiva () {
+        numero_immagine = numero_immagine + 1;
+
+        if ( numero_immagine &gt;= 3 ) numero_immagine = 0;
+
+        imposta_immagine ( numero_immagine );
+        metti_piastrelle ();
+
+        var successiva = document.getElementById ( "successiva" );
+        successiva.setAttribute ( "disabled", "disabled" );
+}
+</code></pre>
+
+</section>
+<section>
+
+<p><ul>
+	<li>aggiunge 1 al numero dell'immagine perch&eacute; dobbiamo passare alla successiva
+(e dobbiamo segnarcelo);
+	<li>controlla se non siamo oltre la terza immagine, altrimenti si riparte
+dalla prima, che &egrave; il numero 0 (attenzione!);
+	<li>chiama la funzione "imposta_immagine" per visualizzare la nuova immagine;
+	<li>chiama la funzione "metti_piastrelle" per visualizzare nuovamente tutte le
+piastrelle;
+	<li>disabilita il pulsante "Successiva". Se per attivare il pulsante abbiamo
+tolto l'attributo "disabled" adesso lo rimettiamo per disabilitarlo nuovamente.
+</ul></p>
+
+</section>
+<section>
+
+<p>Ecco la solita rappresentazione in Scratch:</p>
+<img src="immagini/06_successiva.png"/>
+
+</section>
+<section>
+
+<p>Dimenticato niente?</p>
+<p>Come fa il browser a sapere che deve chiamare la funzione "successiva" quando
+clicchi sul pulsante? Ora dovresti conoscere il trucco.</p>
+<p>Facciamo come abbiamo fatto per le celle di tabella: aggiungiamo al pulsante
+l'attributo "onclick" con all'interno la chiamata alla nostra funzione:</p>
+
+<pre><code data-trim>
+&lt;button id="successiva" class="btn btn-primary" onclick="successiva()" disabled&gt;Successiva&lt;/button&gt;
+</code></pre>
+</section>
+</section>
+
+<!-- slide10 -->
+<section>
+<section>
+<h2>FINE!</h2>
+<p>Il tuo gioco &egrave; finito.</p>
+<p>Cosa puoi fare ora?</p>
+
+</section>
+<section>
+
+<h4>Aggiungere altre immagini</h4>
+<p>Fai attenzione che devono essere tutte della stessa dimensione e che nella
+funzione "successiva" c'&egrave; il controllo sul numero massimo di immagini che deve
+essere modificato.</p>
+
+</section>
+<section>
+
+<h4>Decorare il titolo o altre parti</h4>
+<p>Esercitati a usare i CSS per rendere pi&ugrave; bello il tuo gioco.</p>
+</section>
+</section>
+
+
+			</div>
+		</div>
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'reveal.js/plugin/markdown/marked.js' },
+					{ src: 'reveal.js/plugin/markdown/markdown.js' },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

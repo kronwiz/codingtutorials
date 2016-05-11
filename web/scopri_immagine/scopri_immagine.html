@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Scopri l'immagine</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./scopri_immagine.css">
+	</head>
+
+	<body onload="inizializza()">
+		<div class="container">
+			<!-- titolo -->
+			<div class="row">
+				<div class="title">
+					<h1>Scopri l'immagine</h1>
+				</div>
+			</div>
+			<!-- fine titolo -->
+
+			<!-- immagine -->
+			<div class="row">
+				<div class="col-md-12">
+					<p>
+						<table id="immagine">
+							<tr>
+								<td onclick="togli_piastrella( this )"></td>
+								<td onclick="togli_piastrella( this )"></td>
+								<td onclick="togli_piastrella( this )"></td>
+								<td onclick="togli_piastrella( this )"></td>
+							</tr>
+							<tr>
+								<td onclick="togli_piastrella( this )"></td>
+								<td onclick="togli_piastrella( this )"></td>
+								<td onclick="togli_piastrella( this )"></td>
+								<td onclick="togli_piastrella( this )"></td>
+							</tr>
+							<tr>
+								<td onclick="togli_piastrella( this )"></td>
+								<td onclick="togli_piastrella( this )"></td>
+								<td onclick="togli_piastrella( this )"></td>
+								<td onclick="togli_piastrella( this )"></td>
+							</tr>
+							<tr>
+								<td onclick="togli_piastrella( this )"></td>
+								<td onclick="togli_piastrella( this )"></td>
+								<td onclick="togli_piastrella( this )"></td>
+								<td onclick="togli_piastrella( this )"></td>
+							</tr>
+						</table>
+					</p>
+				</div>
+			</div>
+			<!-- fine immagine -->
+
+			<!-- pulsanti -->
+			<div class="row">
+				<div class="col-md-12">
+					<button id="successiva" class="btn btn-primary" onclick="successiva()" disabled>Successiva</button>
+				</div>
+			</div>
+			<!-- fine pulsanti -->
+		</div>
+		<!-- fine container -->
+
+		<script src="./bootstrap/js/jquery-1.12.1.min.js"></script>
+		<script src="./bootstrap/js/bootstrap.min.js"></script>
+		<script src="./scopri_immagine.js"></script>
+	</body>
+</html>
+

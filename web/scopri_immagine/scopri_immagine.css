@@ -1,0 +1,12 @@
+table {
+	width: 600px;
+	height: 337px;
+	border-spacing: 2px;
+	border-collapse: separate;
+}
+
+div.title {
+	padding: 15px;
+	background-color: #f5f5f5;
+	border-radius: 6px;
+}
