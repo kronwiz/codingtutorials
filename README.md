@@ -4,9 +4,9 @@
 
 Questo repository contiene dei tutorial realizzati per spiegare la programmazione a bambini di età compresa tra i 7 e i 14 anni circa. I tutorial nascono nell'ambito delle attività di docenza svolte all'interno dei CoderDojo italiani.
 
-Sono presenti tutorial per [Scratch](http://scratch.mit.edu) e per le tecnologie web (HTML/CSS/Javascript).
+Sono presenti tutorial per [Scratch](http://scratch.mit.edu), per le tecnologie web (HTML/CSS/Javascript) e per Python.
 
-In futuro potrebbero essere aggiunti tutorial in altri linguaggi (Python, ecc.) e in altre lingue (Inglese, ecc.).
+In futuro potrebbero essere aggiunti tutorial in altri linguaggi e in altre lingue (Inglese, ecc.).
 
 Potete trovare altre informazioni nella [Wiki](../../wiki) come, per esempio, i link ai tutorial eseguibili sul sito di Scratch.
 
@@ -37,9 +37,9 @@ In this repository there is a copy of the GNU General Public License. If not, se
 
 This repository contains some tutorials created to teach coding to kids aged from 7 to 14 years old. The tutorials are born as part of the teaching activities carried out within the italian CoderDojos.
 
-There are tutorials for the [Scratch](http://scratch.mit.edu) environment and for web technologies (HTML/CSS/Javascript) written in italian language.
+There are tutorials for the [Scratch](http://scratch.mit.edu) environment, for web technologies (HTML/CSS/Javascript) and for Python written in italian language.
 
-In the future there may be added some for other languages (Python, etc.) and other locales (English, etc.).
+In the future there may be added some for other languages and other locales (English, etc.).
 
 You can find more information in the [Wiki](../../wiki) such as, for example, links to the executable tutorials on the Scratch website.
 
