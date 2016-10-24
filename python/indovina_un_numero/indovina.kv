@@ -1,0 +1,30 @@
+<IndovinaGame>:
+	ordine: ordine
+	messaggio: messaggio
+
+	orientation: "vertical"
+
+	BoxLayout:
+		Label:
+			text: "Il tuo tentativo"
+		TextInput:
+			id: numero
+
+	BoxLayout:
+		Button:
+			text: "Controlla se hai indovinato"
+			on_press: root.controlla_numero ( numero )
+
+	BoxLayout:
+		Label:
+			text: "numero"
+		Label:
+			id: ordine
+			text: ""
+		Label:
+			text: "estratto"
+
+	BoxLayout:
+		Label:
+			id: messaggio
+			text: ""
