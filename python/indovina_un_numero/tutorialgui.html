@@ -548,6 +548,12 @@ messaggio = ObjectProperty ( None )
 <p>Queste quattro righe (2 nel file &quot;kv&quot; e 2 nel file Python) permettono
 di modificare tramite il codice Python i widget che hanno come id &quot;ordine&quot;
 e &quot;messaggio&quot;.</p>
+<p><code>ObjectProperty</code> &egrave; una classe definita da Kivy, quindi devi
+importarla all'<b>inizio</b> del programma, altrimenti Python segnala un errore:</p>
+
+<pre><code data-trim>
+from kivy.properties import ObjectProperty
+</code></pre>
 	</section>
 	
 	<section>
@@ -576,24 +582,66 @@ def controlla_numero ( self, w_numero ):
 <p>Prova a eseguire il programma e controlla se tutto funziona.</p>
 
 <p>Come esercizio cerca di individuare dove nel codice:
-<ul>
+<ol>
 	<li>viene letto il numero inserito dall'utente. Il valore inserito non viene
 	usato cos&igrave; com'&egrave;. Perch&eacute;? Cosa viene fatto?</li>
 	<li>Il numero inserito dall'utente viene confrontato con quello estratto.
 	Vedi dove viene utilizzato l'attributo dell'oggetto che &egrave; stato
 	memorizzato in precedenza?</li>
-	<li>I testi dei widget &quot;ordine&quot; e &quot;messaggio&quot; vegono
+	<li>I testi dei widget &quot;ordine&quot; e &quot;messaggio&quot; vengono
 	modificati per comunicare il risultato all'utente.</li>
-</ul>
+</ol>
 </p>
 	</section>
-</section>
 
-<!--
+	<section>
+<h3>Risposte</h3>
+<ol>
+<li>Il valore inserito dall'utente viene letto dal widget <code>w_numero</code>
+che &egrave; passato come parametro al metodo <code>controlla_numero</code>.
+Questo widget ha un attributo <code>text</code> in cui &egrave; contenuto il
+testo scritto dall'utente. Il valore, per&ograve;, non pu&ograve; essere usato
+cos&igrave; com'&egrave; perch&eacute; &egrave; una stringa, quindi deve essere
+convertito in un numero intero tramite la funzione <code>int</code>:
+
 <pre><code data-trim>
-
+numero = int ( w_numero.text )
 </code></pre>
--->
+</li>
+</ol>
+	</section>
+
+	<section>
+<ol start="2">
+<li>In precedenza hai memorizzato il numero da indovinare nell'attributo
+<code>estratto</code> dell'oggetto della classe <code>IndovinaGame</code>,
+quindi per &quot;ripescarlo&quot; per confrontarlo con quello inserito
+dall'utente devi usare la sintassi <code>self.estratto</code>; la trovi nelle
+righe tipo questa:
+
+<pre><code data-trim>
+if numero &lt; self.estratto:
+	...
+</code></pre>
+</li>
+</ol>
+	</section>
+
+	<section>
+<ol start="3">
+<li>I widget &quot;ordine&quot; e &quot;messaggio&quot; sono memorizzati negli
+attributi della classe <code>IndovinaGame</code> che hanno lo stesso nome. I
+widget di tipo Label hanno un attributo <code>text</code> che contiene il testo
+visualizzato, quindi copiando una nuova stringa in quell'attributo si cambia il
+testo mostrato a video:
+
+<pre><code data-trim>
+self.messaggio.text = "Bravo hai indovinato!"
+</code></pre>
+</li>
+</ol>
+	</section>
+</section>
 
 			</div>
 		</div>
