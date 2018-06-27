@@ -2,13 +2,13 @@
 
 # Tutorial di programmazione
 
-Questo repository contiene dei tutorial realizzati per spiegare la programmazione a bambini di età compresa tra i 7 e i 14 anni circa. I tutorial nascono nell'ambito delle attività di docenza svolte all'interno dei CoderDojo italiani.
+Questo repository contiene i tutorial realizzati per spiegare la programmazione a bambini di età compresa tra i 7 e i 14 anni circa. I tutorial nascono nell'ambito delle attività di docenza svolte all'interno dei CoderDojo italiani.
 
 Sono presenti tutorial per [Scratch](http://scratch.mit.edu), per le tecnologie web (HTML/CSS/Javascript) e per Python.
 
 In futuro potrebbero essere aggiunti tutorial in altri linguaggi e in altre lingue (Inglese, ecc.).
 
-Potete trovare altre informazioni nella [Wiki](../../wiki) come, per esempio, i link ai tutorial eseguibili sul sito di Scratch.
+**Il sito completo di tutte le informazioni e i link per scaricare i singoli tutorial è: [Creare programmando](http://kronwiz.github.io/codingtutorials).**
 
 ## Licenza
 
@@ -16,9 +16,9 @@ Potete trovare altre informazioni nella [Wiki](../../wiki) come, per esempio, i 
 
 I testi dei tutorial sono distribuiti con licenza
 
-![Licenza Creative Commons](https://i.creativecommons.org/l/by-sa/4.0/88x31.png) 
+![Licenza Creative Commons](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
 
-[Creative Commons Attribuzione - Condividi allo stesso modo 4.0 Internazionale.](http://creativecommons.org/licenses/by-sa/4.0/deed.it) 
+[Creative Commons Attribuzione - Condividi allo stesso modo 4.0 Internazionale.](http://creativecommons.org/licenses/by-sa/4.0/deed.it)
 
 ### Software
 
@@ -41,7 +41,7 @@ There are tutorials for the [Scratch](http://scratch.mit.edu) environment, for w
 
 In the future there may be added some for other languages and other locales (English, etc.).
 
-You can find more information in the [Wiki](../../wiki) such as, for example, links to the executable tutorials on the Scratch website.
+**The site with all the information and links to download the tutorials is: [Creare programmando](http://kronwiz.github.io/codingtutorials) (italian only, sorry, but it's straightforward to understand at least how to download a tutorial).**
 
 ## License
 
@@ -49,9 +49,9 @@ You can find more information in the [Wiki](../../wiki) such as, for example, li
 
 The tutorial texts are under the license
 
-![Licenza Creative Commons](https://i.creativecommons.org/l/by-sa/4.0/88x31.png) 
+![Licenza Creative Commons](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
 
-[Creative Commons Attribution-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-sa/4.0/) 
+[Creative Commons Attribution-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-sa/4.0/)
 
 ### Software
 
