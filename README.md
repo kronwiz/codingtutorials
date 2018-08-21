@@ -2,6 +2,8 @@
 
 # Tutorial di programmazione
 
+[![Join the chat at https://gitter.im/creare-programmando/Lobby](https://badges.gitter.im/creare-programmando/Lobby.svg)](https://gitter.im/creare-programmando/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Questo repository contiene i tutorial realizzati per spiegare la programmazione a bambini di età compresa tra i 7 e i 14 anni circa. I tutorial nascono nell'ambito delle attività di docenza svolte all'interno dei CoderDojo italiani.
 
 Sono presenti tutorial per [Scratch](http://scratch.mit.edu), per le tecnologie web (HTML/CSS/Javascript) e per Python.
