@@ -22,6 +22,8 @@ I testi dei tutorial sono distribuiti con licenza
 
 [Creative Commons Attribuzione - Condividi allo stesso modo 4.0 Internazionale.](http://creativecommons.org/licenses/by-sa/4.0/deed.it)
 
+a meno che non sia dichiarato diversamente nel singolo progetto.
+
 ### Software
 
 Tutto il resto (denotato con "software") che include, ma non esaurisce, il codice sorgente, la grafica, i suoni, la musica, le immagini, ecc. è distribuito con licenza GPLv3.
@@ -54,6 +56,8 @@ The tutorial texts are under the license
 ![Licenza Creative Commons](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
 
 [Creative Commons Attribution-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-sa/4.0/)
+
+unless stated differently in the single project.
 
 ### Software
 
