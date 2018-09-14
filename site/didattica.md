@@ -25,3 +25,11 @@ Si tratta di creare una cartina geografica dell'Italia suddivisa per regioni. Cl
 | ![Conversione binario decimale](images/conversione_binario_decimale.png) | [Vai all'anteprima](https://scratch.mit.edu/projects/238642233/){:target="_blank"} |
 
 Lo scopo è quello di sviluppare un programma che chiede l'inserimento di un numero binario e lo converte nella corrispondente rappresentazione decimale.
+
+## Geometria
+
+| Orologio analogico | [Scarica ZIP](files/orologio_analogico.zip) |
+| --- | --- |
+| ![Orologio analogico](images/orologio_analogico.png) | [Vai all'anteprima](https://scratch.mit.edu/projects/246156392/){:target="_blank"} |
+
+Lo scopo è quello di realizzare un orologio analogico a video. Per lo sviluppatore si tratta di capire come convertire le misure di tempo in misure di angoli.
