@@ -37,3 +37,9 @@ Lo scopo del gioco è quello del tiro a segno che si trovava nei luna park nelle
 
 Questo è un tutorial particolare, perché non contiene la descrizione di come sviluppare tutto il gioco: difatti è destinato a "utenti" un po' più esperti.
 Nel tutorial viene descritta la parte più complicata, ovvero come si possono modificare e aggiungere i livelli del gioco e come si fa a creare dei blocchi personalizzati.
+
+| Air Show | [Scarica ZIP](files/air_show.zip) |
+| --- | --- |
+| ![Air Show](images/air_show.png) | &nbsp; |
+
+Fai volare l'aereo tra gli anelli, ma occhio ai pipistrelli!
