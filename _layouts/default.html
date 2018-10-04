@@ -53,5 +53,15 @@
         ga('send', 'pageview');
       </script>
     {% endif %}
+
+    <script type="text/javascript" id="cookiebanner"
+      src="{{ '/site/js/cookiebanner.min.js' | relative_url }}"
+      data-height="30px" data-position="bottom"
+      data-bg="#155a96"
+      data-message="Usiamo i cookie solo per compilare statistiche anonime aggregate che ci consentono di capire come le persone usano il nostro sito."
+      data-close-text="Accetto"
+      data-close-style="float:right;padding-left:5px;font-weight:bold;"
+      data-linkmsg=" ">
+    </script>
   </body>
 </html>
