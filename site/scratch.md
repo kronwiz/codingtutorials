@@ -43,3 +43,9 @@ Nel tutorial viene descritta la parte più complicata, ovvero come si possono mo
 | ![Air Show](images/air_show.png) | &nbsp; |
 
 Fai volare l'aereo tra gli anelli, ma occhio ai pipistrelli!
+
+| Gli elfi e il calzolaio | [Scarica ZIP](files/gli_elfi_e_il_calzolaio.zip) |
+| --- | --- |
+| ![Gli elfi e il calzolaio](images/gli_elfi_e_il_calzolaio.png) | &nbsp; |
+
+Gioco ispirato alla storia classica. Aiuta il calzolaio a diventare ricco!
