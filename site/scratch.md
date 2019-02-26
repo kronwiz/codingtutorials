@@ -49,3 +49,9 @@ Fai volare l'aereo tra gli anelli, ma occhio ai pipistrelli!
 | ![Gli elfi e il calzolaio](images/gli_elfi_e_il_calzolaio.png) | &nbsp; |
 
 Gioco ispirato alla storia classica. Aiuta il calzolaio a diventare ricco!
+
+| Eroe rimbalzante | [Scarica ZIP](files/eroe_rimbalzante.zip) |
+| --- | --- |
+| ![Eroe rimbalzante](images/eroe_rimbalzante.png) | &nbsp; |
+
+Aiuta l'eroe a spingere gli orchetti nel pozzo!
