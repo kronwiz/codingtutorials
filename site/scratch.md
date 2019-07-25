@@ -55,3 +55,9 @@ Gioco ispirato alla storia classica. Aiuta il calzolaio a diventare ricco!
 | ![Eroe rimbalzante](images/eroe_rimbalzante.png) | &nbsp; |
 
 Aiuta l'eroe a spingere gli orchetti nel pozzo!
+
+| Pesci | [Scarica ZIP](files/pesci.zip) |
+| --- | --- |
+| ![Pesci](images/pesci.png) | &nbsp; |
+
+Il pesce grande mangia il pesce piccolo!
