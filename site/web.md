@@ -6,7 +6,7 @@ title: Tutorial per HTML-CSS-Javascript
 
 Da questa pagina potete scaricare i tutorial per HTML/CSS/Javascript, insomma le tecnologie utilizzate sul Web.
 
-| Scopri immagine | [Scarica ZIP](files/web_scopri_immagine.zip) |
+| Scopri immagine | [Scarica ZIP](https://github.com/kronwiz/codingtutorials/raw/master/web/scopri_immagine/scopri_immagine.zip) |
 | --- | --- |
 | ![Scopri immagine](images/web_scopri_immagine.png) | &nbsp; |
 

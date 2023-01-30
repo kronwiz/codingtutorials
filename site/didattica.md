@@ -12,7 +12,7 @@ Anche perché ho notato che se ai ragazzi non si riesce a comunicare quali posso
 
 ## Geografia
 
-| Regioni italiane | [Scarica ZIP](files/regioni_italiane.zip) |
+| Regioni italiane | [Scarica ZIP](https://github.com/kronwiz/codingtutorials/raw/master/scratch/regioni_italiane/regioni_italiane.zip) |
 | --- | --- |
 | ![Regioni italiane](images/regioni_italiane.png) | [Vai all'anteprima](https://scratch.mit.edu/projects/237549863/){:target="_blank"} |
 
@@ -20,7 +20,7 @@ Si tratta di creare una cartina geografica dell'Italia suddivisa per regioni. Cl
 
 ## Matematica
 
-| Conversione binario decimale | [Scarica ZIP](files/conversione_binario_decimale.zip) |
+| Conversione binario decimale | [Scarica ZIP](https://github.com/kronwiz/codingtutorials/raw/master/scratch/conversione_binario_decimale/conversione_binario_decimale.zip) |
 | --- | --- |
 | ![Conversione binario decimale](images/conversione_binario_decimale.png) | [Vai all'anteprima](https://scratch.mit.edu/projects/238642233/){:target="_blank"} |
 
@@ -28,7 +28,7 @@ Lo scopo è quello di sviluppare un programma che chiede l'inserimento di un num
 
 ## Geometria
 
-| Orologio analogico | [Scarica ZIP](files/orologio_analogico.zip) |
+| Orologio analogico | [Scarica ZIP](https://github.com/kronwiz/codingtutorials/raw/master/scratch/orologio_analogico/orologio_analogico.zip) |
 | --- | --- |
 | ![Orologio analogico](images/orologio_analogico.png) | [Vai all'anteprima](https://scratch.mit.edu/projects/246156392/){:target="_blank"} |
 
