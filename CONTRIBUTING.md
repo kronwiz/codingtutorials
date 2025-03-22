@@ -39,11 +39,3 @@ Il formato del file è YAML, quindi occorre prestare attenzione al fatto che se 
 
 Poiché i tutorial sono distribuiti con licenza CC-BY-SA-4.0 è importante che nel tutorial sia riportato un riferimento di chi lo ha realizzato (uno o più tra: nome, logo, link al sito). Ancora meglio se è presente anche un riferimento alla licenza.
 <br/>Ovviamente questo è solo un consiglio: seguirlo è a discrezione di chi crea il tutorial.
-
-
-## Contatti
-
-Se ci fossero problemi (per qualunque motivo) a seguire le indicazioni potete mettervi in contatto con me, oltre alla normale interazione tramite pull request, tramite:
-
-- mail anti-spam (poi vi ricontatto io da un indirizzo "normale"): xlcak143pry1@opayq.com
-- chat su Gitter: https://gitter.im/creare-programmando/Lobby
