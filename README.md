@@ -8,8 +8,6 @@ Sono presenti tutorial per [Scratch](http://scratch.mit.edu), per le tecnologie 
 
 In futuro potrebbero essere aggiunti tutorial in altri linguaggi e in altre lingue (Inglese, ecc.).
 
-**Il sito completo di tutte le informazioni e i link per scaricare i singoli tutorial è: [Creare programmando](http://kronwiz.github.io/codingtutorials).**
-
 ## Licenza
 
 ### Tutorial
@@ -42,8 +40,6 @@ This repository contains some tutorials created to teach coding to kids aged fro
 There are tutorials for the [Scratch](http://scratch.mit.edu) environment, for web technologies (HTML/CSS/Javascript) and for Python written in italian language.
 
 In the future there may be added some for other languages and other locales (English, etc.).
-
-**The site with all the information and links to download the tutorials is: [Creare programmando](http://kronwiz.github.io/codingtutorials) (italian only, sorry, but it's straightforward to understand at least how to download a tutorial).**
 
 ## License
 
